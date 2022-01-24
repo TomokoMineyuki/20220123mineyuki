@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class TodoController extends Controller
 {
+    
     public function index(Request $request)
     {
         $items = Task::all();
@@ -15,15 +16,24 @@ class TodoController extends Controller
     public function create(Request $request)
     {
         $task = new Task;
-        $task->created_at = $request->created_at;
+
         $task->content = $request->content;
         $task->save();
 
         return redirect('/');
     }
+    public function find(Request $request)
+    {
+
+    }
     public function update(Request $request)
     {
-        return redirect('/');
+        $item = $request->all();
+        $task = Task::find($item->id);
+
+        unset($item['_tokun']);
+        $task->fill($item)->save();
+        return redirect('/',['items' => $items]);
     }
     public function delete(Request $request)
     {

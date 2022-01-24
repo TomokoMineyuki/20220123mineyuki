@@ -30,10 +30,10 @@
                 <form action="/todo/update" method="post"></form>
                 <td>
                   <input type="text" class="input-update" value="{{$item->content}}" name="content">
+                  
                 </td>
                 <td>
                   <button class="button-update">更新</button>
-                  
                 </td>
                 <td>
                   <form action="/todo/delete" method="post">
