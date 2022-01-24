@@ -22,10 +22,7 @@ class TodoController extends Controller
 
         return redirect('/');
     }
-    public function find(Request $request)
-    {
 
-    }
     public function update(Request $request)
     {
         $item = $request->all();
