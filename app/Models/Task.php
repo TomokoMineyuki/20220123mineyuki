@@ -10,8 +10,7 @@ class Task extends Model
     /*use HasFactory;*/
     protected $guarded = array('id');
     public static $rules = array(
-        'id' => 'required',
-        'content' => 'required|20', 
+        'content' => 'required|max:20'
     );
 
 }
