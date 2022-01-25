@@ -27,7 +27,7 @@
               @foreach ($items as $item)
               <tr>
                 <td>{{$item->created_at}}</td>
-                <form action="{{ route('todo.update', ['id' => 7]) }}" method="post"></form>
+                <form action="{{ route('todo.update', ['id' => $item->id]) }}" method="post"></form>
                 <td>
                   <input type="text" class="input-update" value="{{$item->content}}" name="content">
                   
